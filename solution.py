@@ -136,8 +136,8 @@ def ping(host, timeout=1):
     packet_min = min(response)*1000
     packet_max = max(response)*1000
     packet_avg = (sum(response)/len(response))*1000
-    stdev_var = (statistics.stdev(response))*1000 
-    vars = [str(round(packet_min, 2)),str(round(packet_max, 2)),str(round(packet_avg, 2)),str(round(stdev_var, 2))]
+    stdev_var = (statistics.pstdev(response))*1000 
+    vars = [str(round(packet_min, 2)),str(round(packet_avg, 2)),str(round(packet_max, 2)),str(round(stdev_var, 2))]
     return vars
 
 if __name__ == '__main__':
